@@ -1,0 +1,366 @@
+
+/* 
+var obj = {
+  name: "pulkit",
+  age: 20,
+  number: 7
+}
+
+var array = [3, 4, 6, 7];
+
+
+
+obj.color = "blue";
+
+//console.log(obj);
+
+array.color = "red";
+
+//console.log(array);
+
+
+for(var element in array) {
+  console.log(array[element]);
+}
+
+*/
+
+
+
+// setTimeout
+// setInterval
+// clearInterval
+
+/*
+
+var timerCount = 10;
+function hi() {
+  console.log(timerCount--);
+  if(timerCount < 0) {
+    clearInterval(si);
+  }
+}
+
+//setTimeout(hi, 3000);
+
+var si = setInterval(hi, 1000);
+
+// now let's say I want to stop this interval after 5 steps.
+// 
+// 
+// */
+// 
+//
+
+
+
+/*
+function fun() {
+  count = 10;
+}
+console.log(count);
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Concept of Closures
+
+
+/*
+
+var a = 10;
+
+function outer() {
+  var b = 20;
+  console.log(a + " " + b);
+  var inner = function () {
+		var c = 40;
+    console.log(b + " " + c);
+  }
+  
+  return inner;
+}
+
+
+var inner = outer();
+inner(); // this right here is closure
+
+*/
+
+
+/*
+
+for(let i = 1;i<=5;i++) {
+  setTimeout(function() {
+    console.log(i);
+	}, 1000)
+}
+
+
+*/
+
+
+/*
+
+
+// Difference between arrow functions and normal functions
+// 
+
+
+
+function Person(name) {
+  this.name = name;
+  console.log(this);
+  /*
+  setTimeout(function() {
+    console.log(this);
+  }, 1000);
+
+  
+  setTimeout(() => console.log(this));
+  
+}
+
+// Arrow functions do not have thier own bindings of this variable or super or arguments
+// 
+// they pick it up from their outer scope 
+// so value of this is coming from the outer scope.
+
+
+
+// creating new person
+
+var p = new Person("pulkit");
+
+
+*/
+
+/*
+var obj = {
+  name: "pulkit",
+  func: function() {
+    console.log(this);
+	}
+}
+
+
+obj.func();
+*/
+
+
+//***************** Learning about class***************
+  
+
+/*
+ 
+var student1 = {
+  name: "pulkit",
+  marks: 23,
+}
+
+console.log(student1);	*/
+
+
+// Now I want to create multiple students so I can create a function for that
+
+
+/*
+
+function createStudent(name, rollno, marks) {
+  var student = {};
+  student.name = name;
+  student.rollno = rollno;
+  student.marks = marks;
+  return student;
+}
+
+var student1 = createStudent("pulkit", 36, 100);
+var student2 = createStudent("gullu", 34, 644);
+
+*/
+
+// here above we want to initialize the values so in JavaScript what we can do is we can call a method as a Constructor
+// IMPORTANT: A method can be called as a constructor by using "new" Keyword.
+
+
+
+/* CODE
+
+function createStudent(name, rollno, marks) {
+  
+  this.name = name;
+  this.rollno = rollno;
+  this.marks = marks;
+	console.log(this);  
+}
+
+
+var student1 = new createStudent("pulkit", 36, 100);
+var student2 = new createStudent("gullu", 34, 644)
+	
+  	CODE END
+*/
+
+// NOTE: By using "new" keyword what I"m doing is that I'm createing an "Object" and calling createStudent function with that Object
+// We know that when a function is called inside an Object then in that "this" keyword refers the Object itself
+// So we are acutally setting the values inside the Objext by using this keyword in the function.
+
+
+
+
+
+
+
+
+
+// ******** Adding Behaviour to the Objects*****************
+// 
+// 
+
+/*
+
+
+function Car(wheels, price) {
+ this.wheels = wheels;
+  this.price = price;
+  
+  //	this.getPrice = function() {
+    //  return this.price;
+	}
+  
+}
+
+
+
+Car.prototype.getPrice = function() {
+  return this.price;
+}
+
+var car1 = new Car(4, 5000);
+var car2 = new Car(5, 3000);
+
+*/
+
+// Explanations of Above Code
+// 
+ /*
+	What's happening here is that for every Object I'm creating a seperate copy of the properties are created for every single Object means
+  all the three properties are there for every single Object including the function.
+  
+  Which is not good meaning this function that we have does not need to copy for every single Object this is a waste of memory so here "Prototypes" come into picture
+  
+  So creating function inside a constructor is not a good Idea.
+  
+  
+  NOTE: So as we know that every function in JavaScritp is basiclaly an Object which has two thigns one for that function and the other one is Prototype
+  So if we are using the function as a constructor so whatever objects I'll make they wil belong to the prototype of the funtion.
+  
+  */
+/*
+ * NOTE: Remember __proto__ and prototype are same but in ES6 __proto__ is actually deprecated so don't use it.
+ * instead we have functions like isPrototypeof, getPrototypeof, hasOwnProperty etc.
+ * Object.getPrototypeof()
+ * Car.prototype.isPrototypeof(car1);
+ * 
+ * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ***************** CLASSES IN JAVASCRIPT *******************
+// 
+
+class Car {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+  
+  getName() {
+    return this.name;
+  }
+}
+
+var car1 = new Car("maruti", 5000);
+var car2 = new Car("suzuki", 3000);
+
+// Deep Down everything is happening in the prototypes format class is just a sugar coating on top of the prototypes concept.
+// 
+// 
+// Difference between class and functions prototyping
+// 	1. Normal functions declaratinos are hoisted
+// 	2. class declaration are not hoisted
+// 	
+// 	1. Normal Functions expressions are hoiseted
+// 	2. Class expressions are not hoisted
+
+
+
+
+// ******** INHERITANCE IN CLASSES ***************88
+// 
+
+class FourWheeler extends Car{
+  constructor(price, doors) {
+    super("audi", price);
+    this.doors = doors;
+  }
+  
+ getName() {
+   super.getName();
+   console.log("in fourwheel");
+ }
+  
+}
+
+var fw1 = new FourWheeler(4, 200000);
+console.log(fw1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

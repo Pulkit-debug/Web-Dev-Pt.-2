@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    /* 3D Animations */
+    .cube {
+      height: 200px;
+      width: 200px;
+      position: relative;
+      margin: 100px;
+      border: 2px solid black;
+
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+    .face {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 20%;
+      top: 20%;
+      transition: all 1s ease-in-out;
+    }
+    .one {
+      background-color: blue;
+    }
+    .two {
+      background-color: orange;
+    }
+    .one:hover {
+      transform: rotateX(80deg) rotateY(80deg);
+    }
+    .two:hover {
+      transform: ;
+    }
+  </style>
+  <body>
+    <div class="cube">
+      <div class="face one"></div>
+      <div class="face two"></div>
+    </div>
+  </body>
+</html>

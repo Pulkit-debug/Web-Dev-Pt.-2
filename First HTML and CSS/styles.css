@@ -1,0 +1,100 @@
+body {
+  background-color: rgb(242, 192, 252);
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+/* Aside */
+
+/* 1st Aside Section */
+
+.widget {
+  border-top: 4px solid black;
+  /* border-bottom: 4px solid black;     */
+}
+
+.widget input {
+  display: block;
+  background-color: #f7f7f7;
+  margin-bottom: 6px;
+  padding: 4px;
+  font-size: 1rem;
+}
+
+.widget button {
+  font-size: 1.2rem;
+  background-color: rgb(5, 51, 255);
+  color: white;
+  padding: 6px;
+}
+
+.widget-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main {
+  width: 70%;
+  display: inline-block;
+}
+
+#right-aside {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  margin-top: 6%;
+  margin-left: 6%;
+}
+
+/* 2nd Aside Section */
+
+#search-section {
+  margin-top: 20%;
+  border-top: 4px solid black;
+  margin-bottom: 20%;
+  justify-content: center;
+}
+#search-section input {
+  margin-top: 10%;
+  padding: 5px;
+  font-size: 1rem;
+  padding-right: 50px;
+}
+#search-section button {
+  padding-top: 7px;
+  padding-bottom: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-left: -4px;
+}
+
+/* 3rd Aside Section */
+#recents-posts-section {
+  border-top: 4px solid black;
+}
+#recents-posts-section h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#recents-posts-section li {
+  color: red;
+}
+
+/* Left Aside */
+
+#left-aside img {
+  vertical-align: top;
+  display: inline-block;
+  width: 20%;
+}
+
+#blog-content {
+  margin-top: -20%;
+  margin-left: 30%;
+  display: inline-block;
+  width: 70%;
+}

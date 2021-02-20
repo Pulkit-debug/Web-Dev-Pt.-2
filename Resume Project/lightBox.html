@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #lightbox {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 0px;
+        justify-content: center;
+        align-items: center;
+        transition: all 2s ease-in-out;
+      }
+      #content {
+        height: 30%;
+        width: 30%;
+        background-color: lightgrey;
+        overflow: hidden;
+      }
+      #lightbox:target {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="open-lightbox">
+      <a href="#lightbox">LightBox</a>
+    </div>
+
+    <div id="lightbox">
+      <div id="content">
+        <a href="#">X</a>
+        <p>some Content</p>
+      </div>
+    </div>
+  </body>
+</html>

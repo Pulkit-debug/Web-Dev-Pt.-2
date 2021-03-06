@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+  </head>
+  <body>
+    <div id="todo-container">
+      <div id="heading">
+        <h1>To-Do App</h1>
+      </div>
+      <div id="input-container">
+        <form action="/create-todo" method="POST">
+          <hr />
+          <div id="description-section">
+            <div>
+              <label for="name">Description</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                name="description"
+                id="description-input"
+                required
+              />
+            </div>
+          </div>
+          <div id="category-date-container">
+            <div id="category-section">
+              <div>
+                <label for="Category">Category</label>
+              </div>
+              <div>
+                <select name="category" class="category-select" required>
+                  <option value="" disabled selected>
+                    Select Your Category
+                  </option>
+                  <option name="category">Work</option>
+                  <option name="category">Home</option>
+                  <option name="category">School</option>
+                </select>
+              </div>
+            </div>
+            <div id="date-section">
+              <div>
+                <label for="due-date">Due Date</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="datepicker"
+                  class="category-select"
+                  placeholder="YYYY/MM/DD"
+                  name="date"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="add-delete-buttons">
+            <div id="add-button">
+              <button type="submit" class="btn">Add Task</button>
+            </div>
+            <div id="delete-button">
+              <button type="button" class="btn">Delete Task</button>
+            </div>
+          </div>
+
+          <hr />
+          <div id="tasks-section">
+            <div class="task-li">
+              <div class="todo-tasks">
+                <a href="/delete-todo/<%= "Home" %> " class="anchor-checkbox">
+                  <input type="checkbox" class="del-checkbox" />
+                </a>
+                <div class="task">
+                  <h3>Add a Task</h3>
+                </div>
+                <div class="task-category">Work</div>
+              </div>
+              <p>YYYY/MM/DD</p>
+            </div>
+
+            <% for(let i of task_list) { %>
+            <div class="task-li">
+              <div class="todo-tasks">
+                <!-- value="/delete-todo/ /*i.category */"-->
+
+                  <input
+                   type="checkbox" class="del-checkbox" onclick="window.location.href='/delete-todo/<%= i.category %>'" />
+                
+                <div class="task">
+                  <h3><%= i.description %></h3>
+                  <!-- <script>
+                    console.log("script working");
+                  </script> -->
+                </div>
+                <div class="task-category"><%= i.category %></div>
+              </div>
+              <p><%= i.date %></p>
+            </div>
+            <% } %>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/javascript.js"></script>
+  </body>
+</html>

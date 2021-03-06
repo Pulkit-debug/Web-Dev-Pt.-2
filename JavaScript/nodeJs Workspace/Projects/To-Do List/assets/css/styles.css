@@ -1,0 +1,131 @@
+body {
+  background-color: rgb(214, 214, 213);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+#todo-container {
+  margin-top: 2%;
+  border: 2px solid black;
+  width: 40vw;
+  background-color: rgb(248, 253, 223);
+  /* height: auto; */
+}
+#heading {
+  text-align: center;
+  margin: 0;
+}
+
+#category-date-container {
+  /* display: inline-flex; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center  ; */
+}
+
+#description-input {
+  width: 99%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+#description-section > div {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+#description-input {
+  font-size: 1.5rem;
+}
+
+#category-section {
+  width: 45%;
+  /* border: 2px solid red; */
+}
+
+.category-select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+}
+#category-section > div {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+#date-section {
+  width: 45%;
+}
+#date-section > div {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+#datepicker {
+  outline: none;
+}
+
+#add-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.btn {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#tasks-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
+}
+
+.todo-tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.task {
+  width: 70%;
+  max-width: 70%;
+  /* border: 2px solid red; */
+  height: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+.task-category {
+  border: 2px solid brown;
+  width: 10%;
+  height: auto;
+  padding: 2%;
+  background-color: rgb(248, 218, 81);
+  border-radius: 5px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  position: relative;
+  left: 9%;
+  font-size: 0.8rem;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  padding: 0;
+}

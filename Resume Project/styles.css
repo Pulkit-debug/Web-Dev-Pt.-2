@@ -12,11 +12,11 @@ p {
 #body-header {
   height: 60vh;
   /* width: 100vw; */
-  background: url(images/newHeaderBackground.jpg);
+  background: url(images/banner-image.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Horizontal List Rules */
@@ -31,6 +31,7 @@ p {
 }
 
 .horizontal-list li {
+  color: white;
   display: inline-block;
   margin: 0px 8px 8px 0px;
   font-weight: 100;
@@ -44,7 +45,7 @@ p {
 }
 
 .nav-menu li a {
-  color: green;
+  /* color: green; */
   transition: color 0.5s, border-bottom 4s;
   transition: border-bottom 1s ease-in-out;
 }
@@ -696,7 +697,7 @@ nav ul li a {
   color: black;
 }
 .nav-nav li a {
-  color: black;
+  color: white;
 }
 
 .nav-nav li {
@@ -710,13 +711,13 @@ nav ul li a {
   color: rgb(250, 19, 192);
 }
 #name-social-container > div > h1 {
-  color: black;
+  color: #fff;
 }
 #my-name {
   font-size: 3.5rem;
 }
 #header-social-part li a i {
-  color: black;
+  color: #fff;
   font-size: 1.2rem;
 }
 
